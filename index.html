@@ -55,7 +55,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+
+div.csl-bib-body { }
+div.csl-entry {
+clear: both;
+}
+.hanging-indent div.csl-entry {
+margin-left:2em;
+text-indent:-2em;
+}
+div.csl-left-margin {
+min-width:2em;
+float:left;
+}
+div.csl-right-inline {
+margin-left:2em;
+padding-left:1em;
+}
+div.csl-indent {
+margin-left: 2em;
+}</style>
 
 
 <script>/*!
@@ -3054,12 +3073,12 @@ vertical-align: -.125em;
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This is an introduction to random forests, a machine learning method widely used in a variety of applications. Random forest is an ensemble learning method comprised of multiple decision trees. Decision trees are used for predictions and classification in a variety of artificial intelligence and machine learning tasks. Decision trees divide data by fields, creating subsets called nodes. Cut offs are applied based on statistics. Resampling training data and using multiple trees to reduce bias and variance leads to the random forest approach.[1]</p>
-<p>Random forest is a classification and regression ensemble method. Ensemble learning methods use several methods to solve a problem. Diversity among methods is indicated by methods making different errors. This leads to improvements in classifications. Random forest extensions include non-parametric test of significance, weighted voting, dynamic integration, weighted random sampling, online random forest, and genetic algorithms. Applications of random forest include ecology, medicine, astronomy, agriculture, traffic, and bioinformatics.[2]</p>
-<p>The authors suggest modifications to the random forest approach regarding how individual trees are built, the construction of datasets, and how individual predictions are coalesced into one prediction. Conditional inference forests are random forests where the predictors of each split are tested for response and allows adjustment for different predictors. For parameter tuning, if the number of trees increases with the number of predictors, the randomization process will lead to predictors having a good chance to be selected. Predictor selection is important. Some predictors are not informative. The number of predictors is important in order to moderate the effects of strong and weak predictors. The size of trees is determined by the splitting criteria. The size of the leaves is another parameter wherein good predictors could be overlooked if the leaf size threshold is too small. The authors suggest sampling without replacement to avoid bias, and sampling a certain number of observations from multiple classes. Random forest implementations can easily be handled by R packages including randomForest and party. R is a free open source software package with documentation, and includes statistical methods for comparisions. Random forests have been used in several studies related to biology and medicine. In such applications, there is usually a relationship between response and predictor variables and sometimes strong correlations between predictors. Random forests have helped with prediction, ranking of influencial variables, and identifying variables with interactions. However, the randomization within implementations prompts the question of reproducability of results. [3]</p>
-<p>As the size of datasets increases (defined by the number of variables exceeding the number of observations), the performance of statistical methods declines; machine learning methods are preferred. The random forest method is comprised of “weak learners - predictors with low bias and high variance”. Random forest error rates are typically good. The study found that random forest is sensitive to tuning parameters such as number of variables selected and number of trees. Other studies have found good performance in areas such as predicting customer churn, fraud detection, identifying bacteria and fish, and identifying eye disease. The default value used to split a node is log2 (N) + 1 or sqrt(N) but this may not be optimal. In addition to adjusting the default split value, the authors suggest using a large number of trees, optimizing the number of variables for node splitting per the experiment, using a proximity matrix (checking to see if two values are on the same node) to account for missing values and outliers, and applying feature selection. [4]</p>
-<p>One application of random forests is in the medical field. Lin et al (2019) analyzed a very large dataset in order to determine risk factors for diabetes, a disease affecting 425 million adults where chronic high blood sugar has effects such as damaging organs. This study applied feature selection, where large numbers of attributes are evaluated to identify the most optimal attributes for prediction. The variable importance score was used, as well as ranking the area under curve, in which the highest area under curve is optimal.[5]</p>
-<p>Another study focused on prediction of students’ major and completion status. Supervised statistical learning models consist of response, which is the result to be predicted, and predictors, which are the factors that contribute to prediction. A classification tree can be constructed to predict new results after being trained on predictors. The classifier can divide the data based on conditions and establish groups with many similar observations. A few measures of variable importance can be used to examine the impact of predictor variables. The Gini decrease importance calculates the average impurity measure for predictor across the tree and is easy to use but less reliable. The permutation decrease importance permutes values of a predictor and re-runs the classifier. If the predictor is important, the accuracy will decrease. Thus, the predictors can be ranked to determine the most influential ones. Beaulac and Rosenthal (2019) found that they were able to predict program completion with 78.84% accuracy and predict choice of major with 47.41% accuracy.[6]</p>
+<p>This is an introduction to random forests, a machine learning method widely used in a variety of applications. Random forest is an ensemble learning method comprised of multiple decision trees. Decision trees are used for predictions and classification in a variety of artificial intelligence and machine learning tasks. Decision trees divide data by fields, creating subsets called nodes. Cut offs are applied based on statistics. Resampling training data and using multiple trees to reduce bias and variance leads to the random forest approach.<span class="citation" data-cites="deVille2013">(<a href="#ref-deVille2013" role="doc-biblioref">de Ville 2013</a>)</span></p>
+<p>Random forest is a classification and regression ensemble method. Ensemble learning methods use several methods to solve a problem. Diversity among methods is indicated by methods making different errors. This leads to improvements in classifications. Random forest extensions include non-parametric test of significance, weighted voting, dynamic integration, weighted random sampling, online random forest, and genetic algorithms. Applications of random forest include ecology, medicine, astronomy, agriculture, traffic, and bioinformatics.<span class="citation" data-cites="Fawagreh2014">(<a href="#ref-Fawagreh2014" role="doc-biblioref">Fawagreh, Gaber, and Elyan 2014</a>)</span></p>
+<p>The authors suggest modifications to the random forest approach regarding how individual trees are built, the construction of datasets, and how individual predictions are coalesced into one prediction. Conditional inference forests are random forests where the predictors of each split are tested for response and allows adjustment for different predictors. For parameter tuning, if the number of trees increases with the number of predictors, the randomization process will lead to predictors having a good chance to be selected. Predictor selection is important. Some predictors are not informative. The number of predictors is important in order to moderate the effects of strong and weak predictors. The size of trees is determined by the splitting criteria. The size of the leaves is another parameter wherein good predictors could be overlooked if the leaf size threshold is too small. The authors suggest sampling without replacement to avoid bias, and sampling a certain number of observations from multiple classes. Random forest implementations can easily be handled by R packages including randomForest and party. R is a free open source software package with documentation, and includes statistical methods for comparisons. Random forests have been used in several studies related to biology and medicine. In such applications, there is usually a relationship between response and predictor variables and sometimes strong correlations between predictors. Random forests have helped with prediction, ranking of influential variables, and identifying variables with interactions. However, the randomization within implementations prompts the question of reproducability of results. <span class="citation" data-cites="Boulesteix2012">(<a href="#ref-Boulesteix2012" role="doc-biblioref">Boulesteix et al. 2012</a>)</span></p>
+<p>As the size of datasets increases (defined by the number of variables exceeding the number of observations), the performance of statistical methods declines; machine learning methods are preferred. The random forest method is comprised of “weak learners - predictors with low bias and high variance”. Random forest error rates are typically good. The study found that random forest is sensitive to tuning parameters such as number of variables selected and number of trees. Other studies have found good performance in areas such as predicting customer churn, fraud detection, identifying bacteria and fish, and identifying eye disease. The default value used to split a node is log2 (N) + 1 or sqrt(N) but this may not be optimal. In addition to adjusting the default split value, the authors suggest using a large number of trees, optimizing the number of variables for node splitting per the experiment, using a proximity matrix (checking to see if two values are on the same node) to account for missing values and outliers, and applying feature selection. <span class="citation" data-cites="Verikas2011">(<a href="#ref-Verikas2011" role="doc-biblioref">Verikas, Gelzinis, and Bacauskiene 2011</a>)</span></p>
+<p>One application of random forests is in the medical field. Lin et al (2019) analyzed a very large dataset in order to determine risk factors for diabetes, a disease affecting 425 million adults where chronic high blood sugar has effects such as damaging organs. This study applied feature selection, where large numbers of attributes are evaluated to identify the most optimal attributes for prediction. The variable importance score was used, as well as ranking the area under curve, in which the highest area under curve is optimal.<span class="citation" data-cites="Lin2019">(<a href="#ref-Lin2019" role="doc-biblioref">Lin, Ji, and Pei 2019</a>)</span></p>
+<p>Another study focused on prediction of students’ major and completion status. Supervised statistical learning models consist of response, which is the result to be predicted, and predictors, which are the factors that contribute to prediction. A classification tree can be constructed to predict new results after being trained on predictors. The classifier can divide the data based on conditions and establish groups with many similar observations. A few measures of variable importance can be used to examine the impact of predictor variables. The Gini decrease importance calculates the average impurity measure for predictor across the tree and is easy to use but less reliable. The permutation decrease importance permutes values of a predictor and re-runs the classifier. If the predictor is important, the accuracy will decrease. Thus, the predictors can be ranked to determine the most influential ones. Beaulac and Rosenthal (2019) found that they were able to predict program completion with 78.84% accuracy and predict choice of major with 47.41% accuracy.<span class="citation" data-cites="Beaulac2019">(<a href="#ref-Beaulac2019" role="doc-biblioref">Beaulac and Rosenthal 2019</a>)</span></p>
 </section>
 <section id="methods" class="level2">
 <h2 class="anchored" data-anchor-id="methods">Methods</h2>
@@ -3089,11 +3108,31 @@ vertical-align: -.125em;
 <h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
 </section>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<section id="references" class="level2 unnumbered">
+
+
 </section>
 
-</main>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Beaulac2019" class="csl-entry" role="listitem">
+Beaulac, Cédric, and Jeffrey S. Rosenthal. 2019. <span>“Predicting University Students’ Academic Success and Major Using Random Forests.”</span> <em>Research in Higher Education</em> 60 (7): 1048–64. <a href="http://www.jstor.org/stable/45217777">http://www.jstor.org/stable/45217777</a>.
+</div>
+<div id="ref-Boulesteix2012" class="csl-entry" role="listitem">
+Boulesteix, Anne-Laure, Silke Janitza, Jochen Kruppa, and Inke R. König. 2012. <span>“Overview of Random Forest Methodology and Practical Guidance with Emphasis on Computational Biology and Bioinformatics.”</span> <em>WIREs Data Mining and Knowledge Discovery</em> 2 (6): 493–507. https://doi.org/<a href="https://doi.org/10.1002/widm.1072">https://doi.org/10.1002/widm.1072</a>.
+</div>
+<div id="ref-deVille2013" class="csl-entry" role="listitem">
+de Ville, Barry. 2013. <span>“Decision Trees.”</span> <em>WIREs Computational Statistics</em> 5 (6): 448–55. https://doi.org/<a href="https://doi.org/10.1002/wics.1278">https://doi.org/10.1002/wics.1278</a>.
+</div>
+<div id="ref-Fawagreh2014" class="csl-entry" role="listitem">
+Fawagreh, K., M. Gaber, and E. Elyan. 2014. <span>“Random Forests: From Early Developments to Recent Advancements.”</span> <em>Systems Science &amp; Control Engineering</em> 2 (9): 602–9.
+</div>
+<div id="ref-Lin2019" class="csl-entry" role="listitem">
+Lin, Shaofu, Wei Ji, and Jiangtao Pei. 2019. <span>“A Method for Selecting Diabetes Features Based on Random Forest.”</span> <em>Journal of Physics: Conference Series</em> 1237 (2). <a href="https://login.ezproxy.lib.uwf.edu/login?url=https://www.proquest.com/scholarly-journals/method-selecting-diabetes-features-based-on/docview/2566217454/se-2">https://login.ezproxy.lib.uwf.edu/login?url=https://www.proquest.com/scholarly-journals/method-selecting-diabetes-features-based-on/docview/2566217454/se-2</a>.
+</div>
+<div id="ref-Verikas2011" class="csl-entry" role="listitem">
+Verikas, A., A. Gelzinis, and M. Bacauskiene. 2011. <span>“Mining Data with Random Forests: A Survey and Results of New Tests.”</span> <em>Pattern Recognition</em> 44 (2): 330–49. https://doi.org/<a href="https://doi.org/10.1016/j.patcog.2010.08.011">https://doi.org/10.1016/j.patcog.2010.08.011</a>.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
